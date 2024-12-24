@@ -1,0 +1,323 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.lesdagen-mobile {
+  display: none;
+}
+
+
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #06cfd6;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.bg-lightblue {
+  background-color: #06CFD6;
+}
+.bg-lightblue-2 {
+  background-color: hsl(182, 70%, 31%);
+}
+
+.grid-cols-4-3 {
+  grid-template-columns: 8fr 7fr;
+}
+
+.half-underline {
+  display: inline-block;
+  position: relative;
+  transform: translateX(-50%);
+}
+.half-underline:after{
+  content: "";
+  position: absolute;
+  width: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 105%;
+  border-bottom: 3.2px solid #1F2937;
+}
+
+button {
+  transition: 0.3s;
+}
+
+i {
+  font-size: 2.5rem !important;
+  color: #64748b;
+  display: none !important;
+}
+
+.text-primary {
+  color: #64748b;
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1460px) {
+  .title{
+    font-size: 2.5rem;
+  }
+  .logo {
+    width: 9rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  nav ul {
+    margin-left: 0 !important;
+  }
+  button {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .banner-img {
+    display: none;
+  }
+  header {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    width: 98vw;
+    padding-bottom: 2rem;
+  }
+  .team, .locatie {
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+  }
+  .team-img, .locatie-img {
+    grid-column: auto;
+    grid-row: 2;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .team-txt,.locatie-txt {
+    grid-column: auto;
+    grid-row: 1;
+    padding-bottom: 2rem;
+  }
+
+  /* .locatie {
+    grid-template-columns: 1fr 1fr;
+  }
+  .locatie-txt {
+    grid-column: auto;
+  }
+  .locatie-img {
+    grid-column: auto;
+    margin-top: 2rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  } */
+
+  .footer {
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+  }
+  .footer-documenten {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  .footer-werking {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  .footer-contact {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  .footer-paginas {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  nav ul {
+    flex-direction: column;
+    margin: 0 !important;
+    text-align: center;
+  }
+  nav ul li {
+    width: 100vw !important;
+    padding: 1rem 0 !important;
+    background: #06CFD6;
+    color: white !important;
+    border-bottom: 2px solid white;
+  }
+  nav ul li:hover, nav ul li:active {
+    background: #6b7280;
+    transition: 0.3s;
+  }
+  .hover-underline-animation::after {
+    width: 0;
+  }
+
+  .zwemfeest, .zwembrevetuitreiking {
+    grid-template-columns: 1fr;
+  }
+  .zwemfeest-txt, .zwemfeest-img, .zwembrevetuitreiking-txt, .zwembrevetuitreiking-img{
+    grid-column: auto;
+  }
+  .zwemfeest-img {
+    width: 75%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+  .zwembrevetuitreiking-img {
+    width: 75%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+
+  .subtitle {
+    margin-right: 2rem;
+  }
+
+  .lesdagen-table {
+    display: none;
+  }
+  .lesdagen-mobile {
+    display: block;
+  }
+
+  .lessen ul, .lesdagen-mobile ul{
+    margin-left: 3rem !important;
+  }
+
+  .kalender {
+    grid-template-columns: 1fr;
+  }
+  .kalender-woensdag, .kalender-donderdag {
+    grid-column-start: 1;
+  }
+  .kalender h2 {
+    left: 0 !important;
+    margin-left: 4rem;
+  }
+  .kalender ul {
+    margin-left: 6rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .zwemfeest-img, .zwembrevetuitreiking-img {
+    width: 100%;
+  }
+
+  .footer {
+    grid-template-columns: 1;
+    grid-template-rows: 4;
+  }
+  .footer-documenten, .footer-werking, .footer-contact, .footer-paginas {
+    grid-column-start: 1;
+  }
+  .footer-documenten {
+    grid-row-start: 1;
+  }
+  .footer-werking {
+    grid-row-start: 2;
+  }
+  .footer-contact {
+    grid-row-start: 3;
+  }
+  .footer-paginas {
+    grid-row-start: 4;
+  }
+
+  header button {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+  }
+
+  .title {
+    display: none;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+
+button:hover {
+  animation: wiggle 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-5deg);
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  /* 20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  } */
+  35%, 100% {
+    transform: rotateZ(0);
+  }
+}
