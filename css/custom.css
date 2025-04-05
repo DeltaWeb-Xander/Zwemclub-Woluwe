@@ -229,7 +229,7 @@ i {
     display: block;
   }
 
-  .lessen ul, .lesdagen-mobile ul{
+  .lessen ul, .lesdagen-mobile ul, .uitstappen ul{
     margin-left: 3rem !important;
   }
 
